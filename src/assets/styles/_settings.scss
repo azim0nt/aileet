@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$bg-color: #071F11;
+$navbar-bg-color: #0B2E0F;
+$green-gradient: radial-gradient(50% 50% at 50% 50%, #3CAC40 0%, rgba(24, 133, 15, 0.00) 100%);
+$green-gradient-2: linear-gradient(110deg, #042808 19.95%, #104315 67.64%, #146D12 107.08%, #10451C 156.61%, #073406 183.21%);
+$green-border: #228D2D;
+$green-text: #1FFF00;
+$btn-bg: #12501C;
+$btn-border: #3C933B;
+$light-green-text-color: #57D37A;
+$light-text-color: #CCF6D0;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+%green-btn {
+    background-color: $btn-bg;
+    border: 2px solid $btn-border;
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.green-btn {
+    @extend %green-btn;
+}
+
+.element-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    &.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+}

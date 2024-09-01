@@ -1,0 +1,58 @@
+@import './settings';
+
+
+.auth-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #0b6432;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: bottom center;
+    backdrop-filter: blur(5px);
+    .auth-content{
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+        background-color: #00000075;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .logo{
+            img{
+                width: 200px;
+            }
+        }
+        .form{
+            background-color: $navbar-bg-color;
+            border-radius: 20px;
+            padding: 20px;
+            width: 450px;
+            border:2px solid $btn-border;
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                p{
+                    width: 100%;
+                    input{
+                        width: 100%;
+                        @extend %green-btn;
+                        &::placeholder{
+                            color: #a7d4b8;
+                        }
+                    }
+                }
+                a{
+                    span{
+                        text-decoration: underline;
+                    }
+                }
+                .green-btn{
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}  

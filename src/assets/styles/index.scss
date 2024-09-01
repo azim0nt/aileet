@@ -1,0 +1,19 @@
+@import './settings';
+
+body {
+    main {
+        width: 100%;
+        min-height: 100vh;
+        background-color: $bg-color;
+        color: #fff;
+        // navbar 
+        header {
+            background-color: $navbar-bg-color;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+    }
+}
