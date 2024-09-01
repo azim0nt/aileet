@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+      ymaps.ready(init)
+      function init() {
+        var myMap = new ymaps.Map('map', {
+          center: [39.646631, 66.923375],
+          zoom: 20 
+        })
+      }
+    </script>
     <title>Vite + React</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+  </body> 
 </html>

@@ -1,4 +1,4 @@
-@import './settings';
+@import './assets/styles/settings';
 
 body {
     main {
@@ -6,7 +6,6 @@ body {
         min-height: 100vh;
         background-color: $bg-color;
         color: #fff;
-        // navbar 
         header {
             background-color: $navbar-bg-color;
             position: fixed;
