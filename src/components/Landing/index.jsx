@@ -14,71 +14,13 @@ function Landing() {
         <div className="landing-wrapper">
             <div className="landing-content">
                 <div className="home">
-                    <span id="aileet-text">
-                        Biz<span id="green-text">AILEET</span> kompaniyasimiz
-                    </span>
-                    <img id="arrow" src={Arrow} alt="" />
                     <div className="left">
                         <img src={Logo} alt="Logo" />
                     </div>
                     <div className="right">
                         <p id="team">{t('dev_team')}</p>
-                        <p id="title">{t('digitize_biz')}</p>
-                        <p id="subtitle">🚀 {t('meet_aileet')} 🚀</p>
-                    </div>
-                </div>
-                <div className="about-us">
-                    <div className="typewriter">
-                        <p id="title">{t('we_are_engineers')}</p>
-                    </div>
-                    <p id="subtitle">{t('on_telegram')}</p>
-                    <p id="about">t{('aileet_innovation')}</p>
-                </div>
-                <div className="projects">
-                    <h1 className="element-animation">{t('projects_done')}</h1>
-                    <div className="cards">
-                        <div className="card element-animation">
-                            <div className="left">
-                                <img src={Bozorli} alt="Bozorli" />
-                            </div>
-                            <div className="right">
-                                <h2>Bozorli</h2>
-                                <p>{t('bozorli')}</p>
-                                <a href="https://bozorli.uz/" target="_blank" rel="noopener noreferrer" className="green-btn">
-                                    {t('more_info')}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card element-animation">
-                            <div className="left">
-                                <img src={Ishlance} alt="Ishlance" />
-                            </div>
-                            <div className="right">
-                                <h2>Ishlance</h2>
-                                <p>{t('ishlance')}</p>
-                                <button className="green-btn">{t('more_info')}</button>
-                            </div>
-                        </div>
-                        <div className="card element-animation">
-                            <div className="left">
-                                <img src={Bookmark} alt="Bookmark" />
-                            </div>
-                            <div className="right">
-                                <h2>CIB on the Mobile</h2>
-                                <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
-                                <button className="green-btn">LEARN MORE</button>
-                            </div>
-                        </div>
-                        <div className="card element-animation">
-                            <div className="left">
-                                <img src={Bookmark} alt="Bookmark" />
-                            </div>
-                            <div className="right">
-                                <h2>CIB on the Mobile</h2>
-                                <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
-                                <button className="green-btn">LEARN MORE</button>
-                            </div>
-                        </div>
+                        <p id="title">{t('meet_aileet')}</p>
+                        <p id="subtitle">{t('digitize_biz')}</p>
                     </div>
                 </div>
                 <div className="stack">
@@ -87,6 +29,8 @@ function Landing() {
                     </p>
                     <img className="element-animation" src={Stack} alt="Stack" />
                 </div>
+            
+
                 <div className="featured-project">
                     <div className="project-1 element-animation">
                         <div className="left">

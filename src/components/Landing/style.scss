@@ -16,7 +16,7 @@
             display: flex;
             align-items: center;
             position: relative;
-
+            justify-content: space-between;
             #aileet-text {
                 position: absolute;
                 top: -30px;
@@ -39,7 +39,7 @@
 
             .left {
                 background: $green-gradient;
-                width: 385px;
+                width: 585px;
                 border-radius: 431px;
                 height: 431px;
                 display: flex;
@@ -51,7 +51,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-
+                text-align: right;
                 p {
                     &#team {
                         text-decoration: underline 1px;
@@ -60,7 +60,8 @@
                     }
 
                     &#title {
-                        font-size: 3em;
+                        font-size: 2em;
+                        text-wrap: balance;
                     }
 
                     &#subtitle {
@@ -71,29 +72,7 @@
             }
         }
 
-        .about-us {
-            padding-top: 50px;
 
-            .typewriter {
-                display: flex;
-                width: 100%;
-                #title {
-                    width: 100vh;
-                    position: relative;
-                    top: 50%;
-                    left: 0;
-                    text-align: left;
-                    white-space: nowrap;
-                    font-size: 45px;
-                }
-            }
-
-            #about {
-                padding-top: 50px;
-                text-wrap: balance;
-                width: 40%;
-            }
-        }
 
         .projects {
             padding-top: 100px;
@@ -230,7 +209,10 @@
 
                 .right {
 
+                    height: 100%;
                     text-align: right;
+                    position: relative;
+                    
 
                     #subtitle {
                         color: $light-green-text-color ;
@@ -240,10 +222,7 @@
                         color: $light-text-color;
                         font-size: 30px;
                     }
-
-                    position: relative;
-                    height: 100%;
-
+ 
                     .glass-card {
                         backdrop-filter: blur(40px);
                         width: 700px;
@@ -259,9 +238,6 @@
                     }
                 }
             }
-
-
-            &.reserse {}
         }
         .contact{
             display: flex;
