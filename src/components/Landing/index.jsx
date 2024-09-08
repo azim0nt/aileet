@@ -31,10 +31,10 @@ function Landing() {
         e.preventDefault();
     
         emailjs.send(
-          'service_d1yueuv',      
-          'template_jopjq8e',     
+          import.meta.env.VITE_SERVICE_ID,      
+          import.meta.env.VITE_TEMPLATE_ID,     
           formData,              
-          'pGMFcbq4Wt_K_aqgt'           
+          import.meta.env.VITE_USER_ID           
         )
         .then((result) => {
           console.log('SUCCESS!', result.text);
@@ -50,6 +50,7 @@ function Landing() {
           alert('Ошибка отправки сообщения.');
         });
       };
+
     return (
         <div className="landing-wrapper">
             <div className="landing-content">
