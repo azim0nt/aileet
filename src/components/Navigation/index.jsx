@@ -11,7 +11,7 @@ function Navigation() {
         const burgerMenu = document.querySelector('nav .right');
 
         const goToPath = (e, path) => {
-            e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+            e.preventDefault();
             const targetElement = document.querySelector(path);
             if (targetElement) {
                 const offset = 50;
@@ -28,19 +28,36 @@ function Navigation() {
             burgerMenuBtn.classList.toggle('open');
         };
 
-        const homeLink = document.querySelector('#home-link');
-        const aboutLink = document.querySelector('#about-link');
-        const labLink = document.querySelector('#lab-link');
+        const links = [
+            { link: document.querySelector('#home-link'), section: '.home' },
+            { link: document.querySelector('#stack'), section: '.stack' },
+            { link: document.querySelector('#projects'), section: '.featured-project' },
+            { link: document.querySelector('#contact'), section: '.consultation-wrapper' }
+        ];
 
-        if (homeLink) {
-            homeLink.addEventListener('click', (e) => goToPath(e, '.home'));
-        }
-        if (aboutLink) {
-            aboutLink.addEventListener('click', (e) => goToPath(e, '.about-us'));
-        }
-        if (labLink) {
-            labLink.addEventListener('click', (e) => goToPath(e, '.stack'));
-        }
+        // Настройка наблюдателя для секций
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const link = links.find(l => l.section === `.${entry.target.classList[0]}`)?.link;
+                    if (entry.isIntersecting && link) {
+                        link.classList.add('active');
+                    } else if (link) {
+                        link.classList.remove('active');
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        // Добавляем секции для отслеживания и назначаем скролл при клике
+        links.forEach(({ link, section }) => {
+            const sectionElement = document.querySelector(section);
+            if (sectionElement) observer.observe(sectionElement);
+            if (link) {
+                link.addEventListener('click', (e) => goToPath(e, section));
+            }
+        });
 
         const languageSelect = document.getElementById('language-select');
         if (languageSelect) {
@@ -54,18 +71,19 @@ function Navigation() {
         }
 
         return () => {
-            if (homeLink) {
-                homeLink.removeEventListener('click', (e) => goToPath(e, '.home'));
-            }
-            if (aboutLink) {
-                aboutLink.removeEventListener('click', (e) => goToPath(e, '.about-us'));
-            }
-            if (labLink) {
-                labLink.removeEventListener('click', (e) => goToPath(e, '.stack'));
-            }
             if (burgerMenuBtn) {
                 burgerMenuBtn.removeEventListener('click', burgerMenuFn);
             }
+
+            // Останавливаем наблюдатель
+            observer.disconnect();
+
+            // Удаляем обработчики событий для ссылок
+            links.forEach(({ link, section }) => {
+                if (link) {
+                    link.removeEventListener('click', (e) => goToPath(e, section));
+                }
+            });
         };
     }, [i18n]);
 
@@ -84,8 +102,9 @@ function Navigation() {
                 </div>
                 <div className="right">
                     <a id="home-link" href="#">Home</a>
-                    <a id="about-link" href="#">About</a>
-                    <a id="lab-link" href="#">Lab</a>
+                    <a id="stack" href="#">Stack</a>
+                    <a id="projects" href="#">Projects</a>
+                    <a id="contact" href="#">Contact</a>
                     <select className="green-btn" name="language" id="language-select" defaultValue={i18n.language}>
                         <option value="en">English</option>
                         <option value="uz">Uzbek</option>

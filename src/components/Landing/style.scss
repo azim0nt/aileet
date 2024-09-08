@@ -2,15 +2,13 @@
 
 
 .landing-wrapper {
-    max-width: 150vh;
     min-height: 100vh;
     width: 100%;
-    padding: 0 20px;
-    margin: 0 auto;
-    padding-bottom: 200px;
     .landing-content {
-
-
+        padding: 0 20px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 170vh;  
         .home {
             display: flex;
             align-items: center;
@@ -82,8 +80,8 @@
 
 
         .projects {
-            padding-top: 100px;
-
+            height: 100vh;
+            padding-top: 50px;
             .cards {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -116,10 +114,11 @@
 
         .stack {
             text-align: center;
-            margin-bottom: 50px;
+            height: 100vh;
+            padding-top: 50px;
             #title {
                 font-size: 25px;
-                padding-bottom: 40px;
+                
             }
 
             img {
@@ -129,6 +128,8 @@
         }
 
         .featured-project {
+        height: 100vh;
+        padding-top: 50px;
             .project-1 {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -143,11 +144,13 @@
                         color: $light-text-color;
                         font-size: 30px;
                     }
-
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
+                    & {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between !important;
+                    }
+                
                     .glass-card {
                         backdrop-filter: blur(40px);
                         width: 700px;
@@ -236,7 +239,7 @@
                         backdrop-filter: blur(40px);
                         width: 100%;
                         padding: 25px;
-                        height: 190px;
+                        min-height: 190px;
                         border-radius: 20px;
                         text-wrap: pretty;
                         margin-top: auto;
@@ -251,7 +254,8 @@
             }
         }
         .consultation-wrapper {
-            margin-top: 200px;
+        height: 100vh;
+        padding-top: 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -425,11 +429,17 @@
                     }
                 }
             }
-            .contact{
-                .right{
-                    #map{
-                        width: 400px;
-                        height: 400px;
+            .consultation-wrapper{
+                flex-direction: column-reverse;
+                
+                width: 100%;
+                form{
+                    width: 100%;
+                }
+                .image-wrapper{
+                    width: 100%;
+                    img{
+                        object-fit: cover;
                     }
                 }
             }

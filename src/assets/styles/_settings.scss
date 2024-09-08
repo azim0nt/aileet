@@ -11,6 +11,20 @@ $btn-border: #3C933B;
 $light-green-text-color: #57D37A;
 $light-text-color: #CCF6D0;
 
+$warning: #15ff00;
+$warning-t: #00ff4c30;
+
+$consultation-bg: #0a0a0a;
+$dark: #141414;
+$dark-lighter: #1C1C1C;
+
+$light: #FFFFFF;
+$text-color: #6C6C6C;
+
+
+$success: #00FF0030;
+$danger: #FF000030;
+
 * {
     padding: 0;
     margin: 0;
@@ -52,4 +66,22 @@ button {
         transition: all 1s;
         transform: translateY(0%);
       }
+}
+
+@mixin grid($columns: 12, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: $gap;
+}
+
+// USAGE:
+// @include grid();
+// @include grid(3, 10px);
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 10px) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
 }
